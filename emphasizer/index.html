@@ -4,42 +4,49 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <link href="css/cpp-study.css" rel="stylesheet">
-    <script type="text/javascript" src="js/cpp-study.js"></script>
+    <script type="text/javascript" src="https://github.com/wiredolphin/emphasizer/emphasizer.js"></script>
     <title>Emphasizer test</title>
     </head>
     <body>
         <pre>
-            #include <iostream>
-             
-            struct Vector {
-                int sz;
-                double* elem;
-            };
-             
-            void vector_init(Vector& v, int s)
-            {
-                v.elem = new double[s];
-                v.sz = s;
-            }
-             
-            double read_and_sum(int s)
-            {
-                Vector v;
-                vector_init(v, s);
-                for(int i = 0; i != s; ++i)
-                    std::cin >> v.elem[i];
-                double sum = 0;
-                for(int i = 0; i != s; ++i)
-                    sum += v.elem[i];
-                return sum;
-            }
-             
-            int main(void)
-            {
-                std::cout << read_and_sum(3) << "\n";
-                return 0;
-            }
-            </pre>
+#include <iostream>
+ 
+struct Vector {
+    int sz;
+    double* elem;
+};
+ 
+void vector_init(Vector& v, int s)
+{
+    v.elem = new double[s];
+    v.sz = s;
+}
+ 
+double read_and_sum(int s)
+{
+    Vector v;
+    vector_init(v, s);
+    for(int i = 0; i != s; ++i)
+        std::cin >> v.elem[i];
+    double sum = 0;
+    for(int i = 0; i != s; ++i)
+        sum += v.elem[i];
+    return sum;
+}
+ 
+int main(void)
+{
+    std::cout << read_and_sum(3) << "\n";
+    return 0;
+}
+        </pre>
+        <script>
+            var emp = new Emphasizer(document.querySelector('pre'), 'c++');
+        </script>
     </body>
 </html>
+
+
+
+
 
